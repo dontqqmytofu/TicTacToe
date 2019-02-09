@@ -86,13 +86,15 @@ public class TicTacToe
         game_board = new String[9];
         whose_turn = "X";
         String winner = null;
-
+        
+        
+        System.out.println("Welcome to 2 Player Tic Tac Toe.");
+        System.out.println("--------------------------------");
         populateEmptyBoard(); // (1) use this method to populate the empty board
 
 
         printBoard(); // (2) use this method to print the Tic Tac Toe board as showed in sample output
-
-
+        System.out.println("X's will play first. Enter a slot to place X in.");
 
         // Logic to check if the number entered is in range or not and to check who is winner
         while (winner == null)
