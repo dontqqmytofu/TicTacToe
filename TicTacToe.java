@@ -126,7 +126,12 @@ public class TicTacToe
             }
         }
         // (7) write the code to print draw / winner
-
+        if(winner.equals("draw")) {
+             System.out.println("It's a draw! Thanks for playing.");
+        } else if(winner.equals("X")){
+             System.out.println("Congratulations! X's have won. Thanks for playing.");
+        } else
+             System.out.println("Congratulations! O's have won. Thanks for playing.");
 
     }
 }
