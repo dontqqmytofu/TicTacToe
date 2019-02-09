@@ -26,6 +26,13 @@ public class TicTacToe
     static void printBoard() // This method is to print the board in the required format
     {
         // (2) write your code here
+          System.out.println("/---|---|---\\");
+        System.out.println("| " + game_board[0] + " | " + game_board[1] + " | " + game_board[2] + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + game_board[3] + " | " + game_board[4] + " | " + game_board[5] + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + game_board[6] + " | " + game_board[7] + " | " + game_board[8] + " |");
+        System.out.println("/---|---|---\\");
 
 
     }
