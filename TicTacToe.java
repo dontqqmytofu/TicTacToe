@@ -110,7 +110,7 @@ public class TicTacToe
                 System.out.println("Invalid input; Re start the game");
             }
 
-            if (game_board[number-1]==number))  // (3) This statement is incorrect, edit it
+            if (game_board[number-1] != "X" || game_board[number-1] != "O")    // (3) This statement is incorrect, edit it
             {
                 // (4) write the code here for assigning 'X' or 'O' and changing turns.
 
