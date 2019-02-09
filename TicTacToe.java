@@ -20,13 +20,16 @@ public class TicTacToe
     static void populateEmptyBoard() // This method is to populate the board
     {
         // (1) write your code here
-        
+        game_board = new String[9];
+        for(int i=0; i<9; i++){
+            game_board[i] = String.valueOf(i+1); //turns the numbers into strings, populating game_board
+        }
     }
 
     static void printBoard() // This method is to print the board in the required format
     {
         // (2) write your code here
-          System.out.println("/---|---|---\\");
+        System.out.println("/---|---|---\\");
         System.out.println("| " + game_board[0] + " | " + game_board[1] + " | " + game_board[2] + " |");
         System.out.println("|-----------|");
         System.out.println("| " + game_board[3] + " | " + game_board[4] + " | " + game_board[5] + " |");
