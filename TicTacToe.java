@@ -1,4 +1,9 @@
-/* Question : Below is the incomplete code for TicTacToe game.
+/* 
+Leonardo Tse
+Steven Yang
+OMIS 137 - Ghiassi
+Assignment 5: TicTacToe Game
+Question : Below is the incomplete code for TicTacToe game.
 There are blanks in the code, which you need to fill out with the help of the output and logic.
 Your output should look, exactly like the sample output.
 This is a group Assignment. Work in teams of two.
@@ -37,7 +42,6 @@ public class TicTacToe
         System.out.println("| " + game_board[6] + " | " + game_board[7] + " | " + game_board[8] + " |");
         System.out.println("/---|---|---\\");
 
-
     }
 
     static String checkWinner()
@@ -45,26 +49,33 @@ public class TicTacToe
         for (int a = 0; a < 8; a++)
         {
             String line = null;
-            switch (a)
+            switch (a) //creates a list of possibilities that are "winning combinations
             {
+                // (5) write your code here
                 case 0: line = game_board[0] + game_board[1] + game_board[2];
+                break;
                 case 1: line = game_board[3] + game_board[4] + game_board[5];
+                break;
                 case 2: line = game_board[6] + game_board[7] + game_board[8];
+                break;
                 case 3: line = game_board[0] + game_board[3] + game_board[6];
+                break;
                 case 4: line = game_board[1] + game_board[4] + game_board[7];
+                break;
                 case 5: line = game_board[2] + game_board[5] + game_board[8];
+                break;
                 case 6: line = game_board[0] + game_board[4] + game_board[8];
+                break;
                 case 7: line = game_board[6] + game_board[4] + game_board[2];
-
+                break;
             }
+            
+            //checks to see if the combination is a winner
             if(line.equals("XXX")) {
                 return "X";
             } else if (line.equals("OOO")) {
                 return "O";
             }
-
-            // (6) write the condition to return the winner
-
 
         }
         for (int a = 0; a < 9; a++) {
@@ -74,6 +85,10 @@ public class TicTacToe
             else if (a == 8) return "draw";
         }
 
+        if(whose_turn == "X"){ //changes turn based on whose turn it currently is
+            whose_turn = "O";
+        } else
+            whose_turn = "X";
         System.out.println(whose_turn + "'s turn; enter a slot number to place " + whose_turn + " in:");
         return null;
     }
@@ -86,14 +101,16 @@ public class TicTacToe
         game_board = new String[9];
         whose_turn = "X";
         String winner = null;
-        
-        
+
+
+        //initial message
         System.out.println("Welcome to 2 Player Tic Tac Toe.");
         System.out.println("--------------------------------");
         populateEmptyBoard(); // (1) use this method to populate the empty board
 
 
         printBoard(); // (2) use this method to print the Tic Tac Toe board as showed in sample output
+
         System.out.println("X's will play first. Enter a slot to place X in.");
 
         // Logic to check if the number entered is in range or not and to check who is winner
@@ -112,10 +129,10 @@ public class TicTacToe
                 System.out.println("Invalid input; Re start the game");
             }
 
-            if (game_board[number-1] != "X" || game_board[number-1] != "O")    // (3) This statement is incorrect, edit it
+            if (game_board[number-1] != "X" || game_board[number-1] != "O")  // (3) This statement is incorrect, edit it
             {
                 // (4) write the code here for assigning 'X' or 'O' and changing turns.
-
+                game_board[number-1] = whose_turn;
 
                 printBoard(); // (2) use this method to print the Tic Tac Toe board as showed in sample output
 
@@ -128,12 +145,11 @@ public class TicTacToe
             }
         }
         // (7) write the code to print draw / winner
-        if(winner.equals("draw")) {
-             System.out.println("It's a draw! Thanks for playing.");
-        } else if(winner.equals("X")){
-             System.out.println("Congratulations! X's have won. Thanks for playing.");
-        } else
-             System.out.println("Congratulations! O's have won. Thanks for playing.");
-
+        if(winner.equals("draw"))
+            System.out.println("It's a draw! Thanks for playing.");
+         else if(winner.equals("X"))
+            System.out.println("Congratulations! X's have won. Thanks for playing.");
+        else
+            System.out.println("Congratulations! O's have won. Thanks for playing.");
     }
 }
